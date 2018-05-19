@@ -1,4 +1,4 @@
-package Server;
+package ServerService;
 
 public class Server {
 

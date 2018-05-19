@@ -1,11 +1,11 @@
-import Driver.Driver;
-import Driver.DriverAccount;
-import Driver.Car;
-import Passenger.Passenger;
-import Passenger.PassengerAccount;
-import Server.Account;
+import DriverService.Driver;
+import DriverService.DriverAccount;
+import DriverService.Car;
+import PassengerService.Passenger;
+import PassengerService.PassengerAccount;
+import ServerService.RouteHistory;
 
-import static Server.Account.Sex.MEN;
+import static ServerService.Account.Sex.MEN;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,6 +19,10 @@ public class Main {
 
 
         passengerVasya.orderTaxi("OT suda", "do suda", rafshan,passengerVasya,false);
+        RouteHistory routeHistory = new RouteHistory();
+
+
+        passengerVasya.checkRouteHistory();
 
     }
 }

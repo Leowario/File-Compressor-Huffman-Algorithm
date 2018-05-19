@@ -1,4 +1,4 @@
-package Driver;
+package DriverService;
 
 public class Car {
     private String carMark;

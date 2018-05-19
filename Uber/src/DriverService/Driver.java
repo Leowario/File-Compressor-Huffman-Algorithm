@@ -1,4 +1,4 @@
-package Driver;
+package DriverService;
 
 public class Driver {
     private DriverAccount driverAccount;

@@ -1,6 +1,6 @@
-package Passenger;
+package PassengerService;
 
-import Server.Account;
+import ServerService.Account;
 
 public class PassengerAccount extends Account {
     private String numberOfCredditCart;
@@ -13,5 +13,17 @@ public class PassengerAccount extends Account {
         this.numberOfCredditCart = numberOfCredditCart;
         this.passengerRating = passengerRating;
         this.passengerRequirements = passengerRequirements;
+    }
+
+    public String getNumberOfCredditCart() {
+        return numberOfCredditCart;
+    }
+
+    public double getPassengerRating() {
+        return passengerRating;
+    }
+
+    public String getPassengerRequirements() {
+        return passengerRequirements;
     }
 }
