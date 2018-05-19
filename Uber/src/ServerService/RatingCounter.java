@@ -37,7 +37,6 @@ public class RatingCounter {
             return 0;
         }
         return driverRating--;
-
     }
 
 }

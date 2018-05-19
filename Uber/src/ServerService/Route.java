@@ -37,7 +37,7 @@ public class Route {
         this.passenger = passenger;
         this.resultOfRoute = resultOfRoute;
 
-        }
+    }
 
     @Override
     public String toString() {

@@ -17,7 +17,7 @@ public abstract class Account {
         this.sex = sex;
     }
 
-    public enum Sex{
+    public enum Sex {
         MEN,
         WOMEN
     }
