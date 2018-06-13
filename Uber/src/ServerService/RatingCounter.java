@@ -9,7 +9,7 @@ public class RatingCounter {
 
         double passengerRating = passengerAccount.getPassengerRating();
 
-        if (route.getResultOfRoute() == true) {
+        if (route.getResultOfRoute() ) {
             if (passengerRating == 10) {
                 return 10;
             } else {
@@ -26,7 +26,7 @@ public class RatingCounter {
     double driverRatingCount(Route route, DriverAccount driverAccount) {
 
         double driverRating = driverAccount.getDriverRating();
-        if (route.getResultOfRoute() == true) {
+        if (route.getResultOfRoute() ) {
             if (driverRating == 10) {
                 return 10;
             } else {

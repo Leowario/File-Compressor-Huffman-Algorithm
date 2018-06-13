@@ -1,9 +1,9 @@
-import Algorithm.HafmanAlgorithm;
+import Algorithm.Application;
+
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-
-        HafmanAlgorithm hafmanTree = new HafmanAlgorithm();
-        hafmanTree.run("E:/Java/NewFile.txt",true);
+            Application.instace().run(args);
     }
 }

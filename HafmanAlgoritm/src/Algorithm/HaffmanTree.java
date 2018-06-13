@@ -1,17 +1,27 @@
 package Algorithm;
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-public class HafmanAlgorithm {
-    public HafmanAlgorithm() {
+public class HaffmanTree {
+
+    private HaffmanTree() {
 
     }
 
-    class Node implements Comparable<Node> {
+    public static HaffmanTree instace() {
+        return new HaffmanTree();
+    }
+
+    public class Node implements Comparable<Node> {
         int sum;//частота повторений символа
+
         String code;//путь по дереву  к сиволу
 
         public Node(int sum) {
@@ -26,10 +36,12 @@ public class HafmanAlgorithm {
         public int compareTo(Node o) {//сравниваем текущюю частоту с переданной
             return (Integer.compare(sum, o.sum));
         }
+
     }
 
     class InternalNode extends Node {//внутрений узел
         Node left;
+
         Node right;
 
         @Override
@@ -48,53 +60,51 @@ public class HafmanAlgorithm {
     }
 
     class LeafNode extends Node {//листовой узел(листья) (имеют символ и частоту его повторения)
+
         char symbol;
+
+        public char getSymbol() {
+            return symbol;
+        }
 
         @Override
         void buildCode(String code) {
             super.buildCode(code);
             System.out.println(symbol + ": " + code);
         }
-
         public LeafNode(char symbol, int count) {
             super(count);
             this.symbol = symbol;
         }
     }
 
-
-    public void run(String directory, boolean compression) {
-if (compression){
-    compress(directory);
-}
-else {
- //#TODO
-}
-        }
-
-    private void compress(String directory) {
-        byte[] bytes = new byte[20000];
+    String buildTree(String directory) {
+        Map<Character, Node> charNodes = new HashMap<>();//мапа которая за символом выдает узел с этим символом
+        PriorityQueue<Node> priorityQueue = new PriorityQueue<>();
+        byte[] bytes;
+        Map<Character, Integer> symbolAndCout = new HashMap<>();//колекция содержащяя символ и его частоту
         try {
             FileInputStream fileInputStream = new FileInputStream(directory);
+            bytes = new byte[fileInputStream.available()];
             fileInputStream.read(bytes);
+            String s = new String(bytes);
+            System.out.println(s);
         } catch (IOException e) {
             e.printStackTrace();
+            throw new IllegalStateException();
         }
 
-
-        Map<Character, Integer> SymbolAndCout = new HashMap<>();//колекция содержащяя символ и его частоту
         for (int i = 0; i < bytes.length; i++) {
             char c = (char) bytes[i];
-            if (SymbolAndCout.containsKey(c)) {//если такой сивол уже есть в масиве то увеличиваем его чатсотату на 1
-                SymbolAndCout.put(c, SymbolAndCout.get(c) + 1);
+            if (symbolAndCout.containsKey(c)) {//если такой сивол уже есть в масиве то увеличиваем его чатсотату на 1
+                symbolAndCout.put(c, symbolAndCout.get(c) + 1);
             } else {//иначе помещяем в колецию символ с частотой 1
-                SymbolAndCout.put(c, 1);
+                symbolAndCout.put(c, 1);
             }
         }
-        Map<Character, Node> charNodes = new HashMap<>();//мапа которая за символом выдает узел с этим символом
 
-        PriorityQueue<Node> priorityQueue = new PriorityQueue<Node>();
-        for (Map.Entry<Character, Integer> entry : SymbolAndCout.entrySet()) {
+        for (Map.Entry<Character, Integer> entry : symbolAndCout.entrySet()) {
+
             LeafNode leafNode = new LeafNode(entry.getKey(), entry.getValue());
             charNodes.put(entry.getKey(), leafNode);//добовляем в мапу символ и узел в котором он содержеться
             priorityQueue.add(leafNode);//добавляем в очредь все листья-узелы(символ, частота)
@@ -102,63 +112,30 @@ else {
         while (priorityQueue.size() > 1) {
             Node first = priorityQueue.poll();//достаем узел с наименьшей частототой и удалем его из очереди
             Node second = priorityQueue.poll();//
-            priorityQueue.add(new InternalNode(first, second));//ложим назад в очередь новый внутрений узел у которого
+            priorityQueue.add(new InternalNode(first, second));//ложим  в очередь новый внутрений узел у которого
             //есть листья(левый узел и правый)
         }
-        Node root = priorityQueue.poll();
-        root.buildCode("");
-        String encode = " ";
-
-        FileOutputStream fileOutputStream = null;
-        try {
-            fileOutputStream = new FileOutputStream(directory+".compressed");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        byte[] bytesOut = new byte[20000];
-        try {
-            for (int i = 0; i < bytes.length; i++) {
-                char c = (char) bytes[i];
-                encode+=charNodes.get(c).code;
-              fileOutputStream.write(charNodes.get(c).code.getBytes());//достаем код каж
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println(encode);
+        Node root = priorityQueue.poll();//проверка
+        root.buildCode("");//проверка
+        return buildEncode(directory, charNodes, bytes);
     }
 
-//    private Node root;
-//
-//    public HafmanAlgorithm(Node root) {
-//        this.root = root;
-//    }
-
-//    private static class Node {
-//
-//
-//        private Integer frequency;//частота символа
-//
-//        private Character character;//символ
-//
-//        private Node leftChild;
-//
-//        private Node rightChild;
-//
-//        public Node(Integer frequency, Character character) {//конструктор для обычного узла
-//            this.frequency = frequency;
-//            this.character = character;
-//        }
-//
-//        public Node(HafmanAlgorithm left, HafmanAlgorithm right) {//конструктордля главного узла
-//            frequency = left.root.frequency + right.root.frequency;
-//            leftChild = left.root;
-//            rightChild = right.root;
-//        }
-//
-//    }
-
-
+    private String buildEncode(String directory, Map<Character, Node> charNodes, byte[] bytes) {
+        String encode = "";
+        Map<String, Character> deCodeMap = new HashMap<>();//contains code and symbol
+        for (Map.Entry<Character, Node> map : charNodes.entrySet()) {
+            deCodeMap.put(map.getValue().code, map.getKey());//creating decoding map
+        }
+        for (int i = 0; i < bytes.length; i++) {
+            char c = (char) bytes[i];
+            if (charNodes.containsKey(c)) {
+                encode += charNodes.get(c).code;//creating final encode
+            }
+        }
+        //bayting and write in the file(compress)
+        //write table
+        System.out.println(encode);
+        Meta.writeMeta(directory, deCodeMap);
+        return encode;
+    }
 }
-
-
