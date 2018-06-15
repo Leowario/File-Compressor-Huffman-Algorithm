@@ -18,24 +18,14 @@ public class Compressor {
             FileOutputStream fos = new FileOutputStream(directory + ".compressed");
             System.out.println(encode.length());
             for (int i = 0; i < encode.length(); i += 8) {
-                int a = 0;
                 for (int j = 0; j < 8 && (i + j) < encode.length(); j++) {
                     String currentSting = encode.charAt(i + j) + "";
                     if (currentSting.equals("1")) {
-                        a = (byte)(a | 1);
-                        a = (byte)(a << 1);
+                       fos.write("1".getBytes());
                     } else {
-                        a = (a << 1);
+                        fos.write("0".getBytes());
                     }
                 }
-                System.out.println("ZZZ " + (int) a);
-                fos.write(a);
             }
         }
     }
-
-
-
-
-
-

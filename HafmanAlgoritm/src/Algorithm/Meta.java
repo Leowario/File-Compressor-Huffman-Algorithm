@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.Map;
 
 public class Meta {
+
+
     static void writeMeta(String directory, Map<String, Character> deCodeMap) {
         try (FileOutputStream fileOutputStream = new FileOutputStream(directory + ".meta")) {
             for (Map.Entry<String, Character> map : deCodeMap.entrySet()) {
