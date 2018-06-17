@@ -8,7 +8,7 @@ public class Compressor {
 
     }
 
-    public static Compressor instace() {
+    static Compressor instace() {
         return new Compressor();
     }
 

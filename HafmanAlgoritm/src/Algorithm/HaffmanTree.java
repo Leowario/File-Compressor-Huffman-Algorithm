@@ -47,7 +47,7 @@ public class HaffmanTree {
             right.buildCode(code + "1");
         }
 
-        public InternalNode(Node left, Node right) {
+        InternalNode(Node left, Node right) {
             super(left.sum + right.sum);
             this.left = left;
             this.right = right;
@@ -62,16 +62,16 @@ public class HaffmanTree {
         @Override
         void buildCode(String code) {
             super.buildCode(code);
-           // System.out.println(symbol + ": " + code);
+            // System.out.println(symbol + ": " + code);
         }
 
-        public LeafNode(char symbol, int count) {
+        LeafNode(char symbol, int count) {
             super(count);
             this.symbol = symbol;
         }
     }
 
-    public String getEncode() {
+    String getEncode() {
         return encode;
     }
 

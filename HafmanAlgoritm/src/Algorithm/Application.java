@@ -14,7 +14,7 @@ public class Application {
 
     }
 
-    public static Application instace() {
+    public static Application instance() {
         return new Application();
     }
 
@@ -40,8 +40,7 @@ public class Application {
             } catch (UnexpectedFileFormat un) {
                 un.printStackTrace();
             }
-        }
-        else {
+        } else {
             throw new IllegalArgumentException();
         }
     }
