@@ -30,11 +30,11 @@ class Meta {
     }
     static Map<String, Character> readMeta(String directory) throws IOException {
         Map<String, Character> metaMap = new HashMap<>();
-        Path path = Paths.get(directory + ".meta");//read table
+        Path path = Paths.get(directory + ".meta");
         List<String> strings = Files.readAllLines(path);
         for (int i = 0; i < strings.size(); i++) {
             String s = strings.get(i);
-            metaMap.put(s.substring(3, s.length()), s.charAt(0));//add to map(code,symbol)
+            metaMap.put(s.substring(3, s.length()), s.charAt(0));
         }
         return metaMap;
     }

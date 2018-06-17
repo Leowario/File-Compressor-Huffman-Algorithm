@@ -1,6 +1,4 @@
-package Exceprion;
-
-import java.io.IOException;
+package Exception;
 
 public class UnexpectedFileFormat extends Throwable {
 

@@ -1,6 +1,5 @@
 package Algorithm;
 
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -14,9 +13,8 @@ public class Compressor {
     }
 
     void compress(String directory) throws IOException{
-           String encode = HaffmanTree.instace().buildTree(directory).getEncode();
+           String encode = HaffmanTree.instance().buildTree(directory).getEncode();
             FileOutputStream fos = new FileOutputStream(directory + ".compressed");
-            System.out.println(encode+"compress");
             for (int i = 0; i < encode.length(); i += 8) {
                 for (int j = 0; j < 8 && (i + j) < encode.length(); j++) {
                     String currentSting = encode.charAt(i + j) + "";

@@ -1,7 +1,7 @@
 package Algorithm;
 
 
-import Exceprion.UnexpectedFileFormat;
+import Exception.UnexpectedFileFormat;
 
 import java.io.*;
 

@@ -1,10 +1,7 @@
 package Algorithm;
 
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
@@ -16,13 +13,13 @@ public class HaffmanTree {
 
     }
 
-    public static HaffmanTree instace() {
+    public static HaffmanTree instance() {
         return new HaffmanTree();
     }
 
     public class Node implements Comparable<Node> {
-        int sum;//частота повторений символа
-        String code;//путь по дереву  к сиволу
+        int sum;
+        String code;
 
         public Node(int sum) {
             this.sum = sum;
@@ -38,13 +35,13 @@ public class HaffmanTree {
         }
     }
 
-    class InternalNode extends Node {//внутрений узел
+    class InternalNode extends Node {
         Node left;
 
         Node right;
 
         @Override
-        void buildCode(String code) {//присваеваем коды для левого и правого узла
+        void buildCode(String code) {
             super.buildCode(code);
             left.buildCode(code + "0");
             right.buildCode(code + "1");
@@ -58,18 +55,14 @@ public class HaffmanTree {
         }
     }
 
-    class LeafNode extends Node {//листовой узел(листья) (имеют символ и частоту его повторения)
+    class LeafNode extends Node {
 
         char symbol;
-
-        public char getSymbol() {
-            return symbol;
-        }
 
         @Override
         void buildCode(String code) {
             super.buildCode(code);
-            System.out.println(symbol + ": " + code);
+           // System.out.println(symbol + ": " + code);
         }
 
         public LeafNode(char symbol, int count) {
@@ -83,16 +76,14 @@ public class HaffmanTree {
     }
 
     HaffmanTree buildTree(String directory) {
-        Map<Character, Node> charNodes = new HashMap<>();//мапа которая за символом выдает узел с этим символом
+        Map<Character, Node> charNodes = new HashMap<>();
         PriorityQueue<Node> priorityQueue = new PriorityQueue<>();
         byte[] bytes;
-        Map<Character, Integer> symbolAndCout = new HashMap<>();//колекция содержащяя символ и его частоту
+        Map<Character, Integer> symbolAndCout = new HashMap<>();
         try {
             FileInputStream fileInputStream = new FileInputStream(directory);
             bytes = new byte[fileInputStream.available()];
             fileInputStream.read(bytes);
-            String s = new String(bytes);
-            System.out.println(s);
         } catch (IOException e) {
             e.printStackTrace();
             throw new IllegalStateException();
@@ -100,39 +91,38 @@ public class HaffmanTree {
 
         for (int i = 0; i < bytes.length; i++) {
             char c = (char) bytes[i];
-            if (symbolAndCout.containsKey(c)) {//если такой сивол уже есть в масиве то увеличиваем его чатсотату на 1
+            if (symbolAndCout.containsKey(c)) {
                 symbolAndCout.put(c, symbolAndCout.get(c) + 1);
-            } else {//иначе помещяем в колецию символ с частотой 1
+            } else {
                 symbolAndCout.put(c, 1);
             }
         }
 
         for (Map.Entry<Character, Integer> entry : symbolAndCout.entrySet()) {
             LeafNode leafNode = new LeafNode(entry.getKey(), entry.getValue());
-            charNodes.put(entry.getKey(), leafNode);//добовляем в мапу символ и узел в котором он содержеться
-            priorityQueue.add(leafNode);//добавляем в очредь все листья-узелы(символ, частота)
+            charNodes.put(entry.getKey(), leafNode);
+            priorityQueue.add(leafNode);
         }
         while (priorityQueue.size() > 1) {
-            Node first = priorityQueue.poll();//достаем узел с наименьшей частототой и удалем его из очереди
-            Node second = priorityQueue.poll();//
-            priorityQueue.add(new InternalNode(first, second));//ложим  в очередь новый внутрений узел у которого
-            //есть листья(левый узел и правый)
+            Node first = priorityQueue.poll();
+            Node second = priorityQueue.poll();
+            priorityQueue.add(new InternalNode(first, second));
         }
-        Node root = priorityQueue.poll();//проверка
-        root.buildCode("");//проверка
+        Node root = priorityQueue.poll();
+        root.buildCode("");
         buildEncode(directory, charNodes, bytes);
         return new HaffmanTree();
     }
 
     private void buildEncode(String directory, Map<Character, Node> charNodes, byte[] bytes) {
-        Map<String, Character> deCodeMap = new HashMap<>();//contains code and symbol
+        Map<String, Character> deCodeMap = new HashMap<>();
         for (Map.Entry<Character, Node> map : charNodes.entrySet()) {
-            deCodeMap.put(map.getValue().code, map.getKey());//creating decoding map
+            deCodeMap.put(map.getValue().code, map.getKey());
         }
         for (int i = 0; i < bytes.length; i++) {
             char c = (char) bytes[i];
             if (charNodes.containsKey(c)) {
-                encode += charNodes.get(c).code;//creating final encode
+                encode += charNodes.get(c).code;
             }
         }
         Meta.writeMeta(directory, deCodeMap);
