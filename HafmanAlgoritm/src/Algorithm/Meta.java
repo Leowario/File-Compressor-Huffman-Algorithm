@@ -10,14 +10,10 @@ import java.util.List;
 import java.util.Map;
 
 class Meta {
-    private Meta(){
-    }
-    static Meta instace(){
-        return  new Meta();
+    private Meta() {
     }
 
-
-  static void writeMeta(String directory, Map<String, Character> deCodeMap) {
+    static void writeMeta(String directory, Map<String, Character> deCodeMap) {
         try (FileOutputStream fileOutputStream = new FileOutputStream(directory + ".meta")) {
             for (Map.Entry<String, Character> map : deCodeMap.entrySet()) {
                 String entryValue = map.getValue() + ": " + map.getKey();
@@ -28,6 +24,7 @@ class Meta {
             e.printStackTrace();
         }
     }
+
     static Map<String, Character> readMeta(String directory) throws IOException {
         Map<String, Character> metaMap = new HashMap<>();
         Path path = Paths.get(directory + ".meta");

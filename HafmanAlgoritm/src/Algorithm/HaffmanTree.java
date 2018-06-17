@@ -6,14 +6,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-public class HaffmanTree {
+class HaffmanTree {
     static String encode = "";
 
     private HaffmanTree() {
 
     }
 
-    public static HaffmanTree instance() {
+    static HaffmanTree instance() {
         return new HaffmanTree();
     }
 
@@ -21,16 +21,16 @@ public class HaffmanTree {
         int sum;
         String code;
 
-        public Node(int sum) {
+        Node(int sum) {
             this.sum = sum;
         }
 
-        void buildCode(String code) {//постоение кода узла
+        void buildCode(String code) {
             this.code = code;
         }
 
         @Override
-        public int compareTo(Node o) {//сравниваем текущюю частоту с переданной
+        public int compareTo(Node o) {
             return (Integer.compare(sum, o.sum));
         }
     }

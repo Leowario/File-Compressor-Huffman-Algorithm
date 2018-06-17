@@ -28,13 +28,13 @@ public class Application {
 
         if (COMPRESS.equals(mod)) {
             try {
-                Compressor.instace().compress(directory);
+                Compressor.instance().compress(directory);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else if (DECOMPRESS.equals(mod)) {
             try {
-                Decompressor.instace().decompress(directory);
+                Decompressor.instance().decompress(directory);
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (UnexpectedFileFormat un) {
