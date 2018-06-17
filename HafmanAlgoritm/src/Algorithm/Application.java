@@ -23,9 +23,6 @@ public class Application {
             System.out.println("no parameters");
             System.exit(1);
         }
-        if (!args[1].equals(DECOMPRESS) || !args[0].equals(COMPRESS)) {
-
-        }
         final String directory = args[0];
         final String mod = args[1];
 
@@ -43,6 +40,9 @@ public class Application {
             } catch (UnexpectedFileFormat un) {
                 un.printStackTrace();
             }
+        }
+        else {
+            throw new IllegalArgumentException();
         }
     }
 }

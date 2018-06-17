@@ -23,13 +23,13 @@ class Decompressor {
     private static Map<String, Character> codeSymbol = new HashMap<>();
 
     void decompress(String directory) throws IOException,UnexpectedFileFormat {
-        //#TODO Сделать проверку на коректность файла и бросать исключение если формат не знаком
 //       if (!directory.contains(".compressed")){
 //           throw new UnexpectedFileFormat("Unexpected file Format");
 //       }
-        readMeta(directory);
-        FileOutputStream decomressedFile = new FileOutputStream(directory);
-        Path path = Paths.get(directory + ".compressed");//read table
+        String originalDirectory = directory.substring(0, directory.length() - 11);
+        codeSymbol=Meta.readMeta(originalDirectory);
+        FileOutputStream decomressedFile = new FileOutputStream(originalDirectory);
+        Path path = Paths.get(directory);//read table
         List<String> strings = Files.readAllLines(path);
         String currentCode = "";
         String s = strings.get(0);
@@ -48,12 +48,6 @@ class Decompressor {
         }
     }
 
-    private static void readMeta(String directory) throws IOException {
-        Path path = Paths.get(directory + ".meta");//read table
-        List<String> strings = Files.readAllLines(path);
-        for (int i = 0; i < strings.size(); i++) {
-            String s = strings.get(i);
-            codeSymbol.put(s.substring(3, s.length()), s.charAt(0));//add to map(code,symbol)
-        }
-    }
+
+
 }

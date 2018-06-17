@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.PriorityQueue;
 
 public class HaffmanTree {
+    static String encode = "";
 
     private HaffmanTree() {
 
@@ -21,7 +22,6 @@ public class HaffmanTree {
 
     public class Node implements Comparable<Node> {
         int sum;//частота повторений символа
-
         String code;//путь по дереву  к сиволу
 
         public Node(int sum) {
@@ -36,7 +36,6 @@ public class HaffmanTree {
         public int compareTo(Node o) {//сравниваем текущюю частоту с переданной
             return (Integer.compare(sum, o.sum));
         }
-
     }
 
     class InternalNode extends Node {//внутрений узел
@@ -72,13 +71,18 @@ public class HaffmanTree {
             super.buildCode(code);
             System.out.println(symbol + ": " + code);
         }
+
         public LeafNode(char symbol, int count) {
             super(count);
             this.symbol = symbol;
         }
     }
 
-    String buildTree(String directory) {
+    public String getEncode() {
+        return encode;
+    }
+
+    HaffmanTree buildTree(String directory) {
         Map<Character, Node> charNodes = new HashMap<>();//мапа которая за символом выдает узел с этим символом
         PriorityQueue<Node> priorityQueue = new PriorityQueue<>();
         byte[] bytes;
@@ -104,7 +108,6 @@ public class HaffmanTree {
         }
 
         for (Map.Entry<Character, Integer> entry : symbolAndCout.entrySet()) {
-
             LeafNode leafNode = new LeafNode(entry.getKey(), entry.getValue());
             charNodes.put(entry.getKey(), leafNode);//добовляем в мапу символ и узел в котором он содержеться
             priorityQueue.add(leafNode);//добавляем в очредь все листья-узелы(символ, частота)
@@ -117,11 +120,11 @@ public class HaffmanTree {
         }
         Node root = priorityQueue.poll();//проверка
         root.buildCode("");//проверка
-        return buildEncode(directory, charNodes, bytes);
+        buildEncode(directory, charNodes, bytes);
+        return new HaffmanTree();
     }
 
-    private String buildEncode(String directory, Map<Character, Node> charNodes, byte[] bytes) {
-        String encode = "";
+    private void buildEncode(String directory, Map<Character, Node> charNodes, byte[] bytes) {
         Map<String, Character> deCodeMap = new HashMap<>();//contains code and symbol
         for (Map.Entry<Character, Node> map : charNodes.entrySet()) {
             deCodeMap.put(map.getValue().code, map.getKey());//creating decoding map
@@ -132,10 +135,6 @@ public class HaffmanTree {
                 encode += charNodes.get(c).code;//creating final encode
             }
         }
-        //bayting and write in the file(compress)
-        //write table
-        System.out.println(encode);
         Meta.writeMeta(directory, deCodeMap);
-        return encode;
     }
 }
