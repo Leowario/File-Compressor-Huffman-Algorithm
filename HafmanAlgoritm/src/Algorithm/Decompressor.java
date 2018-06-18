@@ -10,8 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import Exception.UnexpectedFileFormat;
-import Exception.NoSuchElementOfCodeExeption;
+import Exceptions.UnexpectedFileFormat;
+import Exceptions.NoSuchElementOfCodeExeption;
 
 class Decompressor {
 

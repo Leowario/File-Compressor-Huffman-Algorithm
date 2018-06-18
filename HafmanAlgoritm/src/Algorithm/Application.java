@@ -1,8 +1,8 @@
 package Algorithm;
 
 
-import Exception.UnexpectedFileFormat;
-import Exception.NoSuchElementOfCodeExeption;
+import Exceptions.UnexpectedFileFormat;
+import Exceptions.NoSuchElementOfCodeExeption;
 
 import java.io.*;
 
