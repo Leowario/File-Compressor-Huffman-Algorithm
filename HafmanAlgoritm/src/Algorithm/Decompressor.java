@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import Exception.UnexpectedFileFormat;
-import Exeprion.NoSuchElementOfCodeExeption;
+import Exception.NoSuchElementOfCodeExeption;
 
 class Decompressor {
 

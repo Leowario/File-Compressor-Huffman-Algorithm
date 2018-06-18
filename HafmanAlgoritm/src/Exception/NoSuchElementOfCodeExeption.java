@@ -1,4 +1,4 @@
-package Exeprion;
+package Exception;
 
 public class NoSuchElementOfCodeExeption extends Throwable {
     public NoSuchElementOfCodeExeption() {

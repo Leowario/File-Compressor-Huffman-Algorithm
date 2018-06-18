@@ -2,7 +2,7 @@ package Algorithm;
 
 
 import Exception.UnexpectedFileFormat;
-import Exeprion.NoSuchElementOfCodeExeption;
+import Exception.NoSuchElementOfCodeExeption;
 
 import java.io.*;
 
