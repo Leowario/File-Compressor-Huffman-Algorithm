@@ -2,6 +2,7 @@ package Algorithm;
 
 
 import Exception.UnexpectedFileFormat;
+import Exeprion.NoSuchElementOfCodeExeption;
 
 import java.io.*;
 
@@ -39,6 +40,8 @@ public class Application {
                 e.printStackTrace();
             } catch (UnexpectedFileFormat un) {
                 un.printStackTrace();
+            } catch (NoSuchElementOfCodeExeption ns) {
+                ns.printStackTrace();
             }
         } else {
             throw new IllegalArgumentException();
