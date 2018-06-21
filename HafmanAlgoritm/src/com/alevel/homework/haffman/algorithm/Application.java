@@ -1,8 +1,8 @@
-package Algorithm;
+package com.alevel.homework.haffman.algorithm;
 
 
-import Exceptions.UnexpectedFileFormat;
-import Exceptions.NoSuchElementOfCodeExeption;
+import com.alevel.homework.haffman.exceptions.UnexpectedFileFormat;
+import com.alevel.homework.haffman.exceptions.NoSuchElementOfCodeExeption;
 
 import java.io.*;
 

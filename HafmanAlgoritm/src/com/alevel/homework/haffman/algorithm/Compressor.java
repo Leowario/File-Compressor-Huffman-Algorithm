@@ -1,4 +1,4 @@
-package Algorithm;
+package com.alevel.homework.haffman.algorithm;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

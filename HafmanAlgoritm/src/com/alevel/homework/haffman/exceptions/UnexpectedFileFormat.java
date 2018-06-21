@@ -1,4 +1,4 @@
-package Exceptions;
+package com.alevel.homework.haffman.exceptions;
 
 public class UnexpectedFileFormat extends Throwable {
 

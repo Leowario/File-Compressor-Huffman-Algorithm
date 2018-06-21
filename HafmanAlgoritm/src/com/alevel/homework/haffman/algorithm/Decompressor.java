@@ -1,4 +1,4 @@
-package Algorithm;
+package com.alevel.homework.haffman.algorithm;
 
 
 import java.io.FileOutputStream;
@@ -10,8 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import Exceptions.UnexpectedFileFormat;
-import Exceptions.NoSuchElementOfCodeExeption;
+import com.alevel.homework.haffman.exceptions.UnexpectedFileFormat;
+import com.alevel.homework.haffman.exceptions.NoSuchElementOfCodeExeption;
 
 class Decompressor {
 

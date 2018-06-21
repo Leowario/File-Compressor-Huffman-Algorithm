@@ -1,4 +1,4 @@
-package Algorithm;
+package com.alevel.homework.haffman.algorithm;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.PriorityQueue;
 
 class HaffmanTree {
-    static String encode = "";
+    private static String encode = "";
 
     private HaffmanTree() {
 
