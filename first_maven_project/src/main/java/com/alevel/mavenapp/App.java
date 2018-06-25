@@ -4,7 +4,7 @@ import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 
 /**
- * @Autor Vitalii Usatyi
+ * @Autor Vitalii-Usatyi
  */
 public class App {
     public static void main(String[] args) throws Exception {
