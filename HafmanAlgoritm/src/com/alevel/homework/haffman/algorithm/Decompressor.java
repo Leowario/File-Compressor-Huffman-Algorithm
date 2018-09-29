@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.alevel.homework.haffman.exceptions.UnexpectedFileFormat;
-import com.alevel.homework.haffman.exceptions.NoSuchElementOfCodeExeption;
+import com.alevel.homework.haffman.exceptions.NoSuchElementOfCodeException;
 
 class Decompressor {
 
@@ -25,7 +25,7 @@ class Decompressor {
 
     private static Map<String, Character> codeSymbol = new HashMap<>();
 
-    void decompress(String directory) throws IOException, UnexpectedFileFormat, NoSuchElementOfCodeExeption {
+    void decompress(String directory) throws IOException, UnexpectedFileFormat, NoSuchElementOfCodeException {
         if (!directory.substring(directory.length() - 11, directory.length()).contains(".compressed")) {
             throw new UnexpectedFileFormat("Unexpected file Format");
         }
@@ -50,7 +50,7 @@ class Decompressor {
             }
         }
         if (!isWrote) {
-            throw new NoSuchElementOfCodeExeption();
+            throw new NoSuchElementOfCodeException();
         }
     }
 }

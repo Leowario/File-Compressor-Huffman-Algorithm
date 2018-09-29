@@ -19,6 +19,7 @@ class Meta {
                 String entryValue = map.getValue() + ": " + map.getKey();
                 fileOutputStream.write(entryValue.getBytes());
                 fileOutputStream.write("\n".getBytes());
+
             }
         } catch (IOException e) {
             e.printStackTrace();

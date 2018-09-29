@@ -2,7 +2,7 @@ package com.alevel.homework.haffman.algorithm;
 
 
 import com.alevel.homework.haffman.exceptions.UnexpectedFileFormat;
-import com.alevel.homework.haffman.exceptions.NoSuchElementOfCodeExeption;
+import com.alevel.homework.haffman.exceptions.NoSuchElementOfCodeException;
 
 import java.io.*;
 
@@ -20,31 +20,22 @@ public class Application {
     }
 
     public void run(String[] args) {
-        if (args.length < 1) {
-            System.out.println("no parameters");
-            System.exit(1);
-        }
         final String directory = args[0];
         final String mod = args[1];
-
-        if (COMPRESS.equals(mod)) {
-            try {
+        try {
+            if (args.length < 1) {
+                System.out.println("no parameters");
+                System.exit(1);
+            }
+            if (COMPRESS.equals(mod)) {
                 Compressor.instance().compress(directory);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else if (DECOMPRESS.equals(mod)) {
-            try {
+            } else if (DECOMPRESS.equals(mod)) {
                 Decompressor.instance().decompress(directory);
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (UnexpectedFileFormat un) {
-                un.printStackTrace();
-            } catch (NoSuchElementOfCodeExeption ns) {
-                ns.printStackTrace();
+            } else {
+                throw new IllegalArgumentException();
             }
-        } else {
-            throw new IllegalArgumentException();
+        } catch (IOException | UnexpectedFileFormat | NoSuchElementOfCodeException e) {
+            e.printStackTrace();
         }
     }
 }

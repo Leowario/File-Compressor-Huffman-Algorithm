@@ -2,6 +2,7 @@ package com.alevel.homework.haffman.algorithm;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Map;
 
 class Compressor {
     private Compressor() {
@@ -13,7 +14,10 @@ class Compressor {
     }
 
     void compress(String directory) throws IOException {
-        String encode = HaffmanTree.instance().buildTree(directory).getEncode();
+        HaffmanTree haffmanTree = HaffmanTreeFactory.instance().create(directory);
+        String encode = haffmanTree.buildEncode();
+        Map<String,Character> deCodeMap = haffmanTree.buildDeCodeMap();
+        Meta.writeMeta(directory, deCodeMap);
         FileOutputStream fos = new FileOutputStream(directory + ".compressed");
         for (int i = 0; i < encode.length(); i += 8) {
             for (int j = 0; j < 8 && (i + j) < encode.length(); j++) {
