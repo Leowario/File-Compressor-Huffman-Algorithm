@@ -5,9 +5,10 @@ import com.alevel.homework.haffman.exceptions.UnexpectedFileFormat;
 import com.alevel.homework.haffman.exceptions.NoSuchElementOfCodeException;
 
 import java.io.*;
-
+/**
+ * @author Vitalii Usatyi
+ */
 public class Application {
-
     private static final String DECOMPRESS = "--decompress";
     private static final String COMPRESS = "--compress";
 
@@ -22,6 +23,7 @@ public class Application {
     public void run(String[] args) {
         final String directory = args[0];
         final String mod = args[1];
+
         try {
             if (args.length < 1) {
                 System.out.println("no parameters");

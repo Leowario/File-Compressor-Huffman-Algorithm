@@ -6,6 +6,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
+/**
+ * @author Vitalii Usatyi
+ */
 class HaffmanTreeFactory {
     private static String encode = "";
     private Map<Character, Node> charNodes = new HashMap<>();
@@ -27,14 +30,13 @@ class HaffmanTreeFactory {
     }
 
     HaffmanTree create(String directory) {
-
         readBytesFromFile(directory);
         initializeSequenceOfCharacters(bytes, symbolAndCount);
         buildLeafNodes();
         buildInternalNodes();
         Node root = priorityQueue.poll();
         root.buildCode("");
-        return new HaffmanTree(directory, charNodes, bytes);
+        return new HaffmanTree(charNodes, bytes);
     }
 
     private void buildInternalNodes() {

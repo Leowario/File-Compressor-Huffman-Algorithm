@@ -9,10 +9,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author Vitalii Usatyi
+ */
 class Meta {
     private Meta() {
     }
 
+    /**
+     * Creates a meta file in the same directory as a compressed file, writes the deCodeMap to file.
+     */
     static void writeMeta(String directory, Map<String, Character> deCodeMap) {
         try (FileOutputStream fileOutputStream = new FileOutputStream(directory + ".meta")) {
             for (Map.Entry<String, Character> map : deCodeMap.entrySet()) {
@@ -27,13 +33,13 @@ class Meta {
     }
 
     static Map<String, Character> readMeta(String directory) throws IOException {
-        Map<String, Character> metaMap = new HashMap<>();
+        Map<String, Character> deCodeMap = new HashMap<>();
         Path path = Paths.get(directory + ".meta");
         List<String> strings = Files.readAllLines(path);
         for (int i = 0; i < strings.size(); i++) {
             String s = strings.get(i);
-            metaMap.put(s.substring(3, s.length()), s.charAt(0));
+            deCodeMap.put(s.substring(3, s.length()), s.charAt(0));
         }
-        return metaMap;
+        return deCodeMap;
     }
 }

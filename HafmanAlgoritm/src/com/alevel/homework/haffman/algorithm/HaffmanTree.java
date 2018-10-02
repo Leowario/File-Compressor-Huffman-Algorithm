@@ -4,16 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Vetal on 29.09.2018.
+ * @author Vitalii Usatyi
  */
-public class HaffmanTree {
+class HaffmanTree {
+    private Map<Character, Node> charNodes;
+    private byte[] bytes;
 
-    String directory;
-    Map<Character, Node> charNodes;
-    byte[] bytes;
-
-    public HaffmanTree(String directory, Map<Character, Node> charNodes, byte[] bytes) {
-        this.directory = directory;
+    HaffmanTree( Map<Character, Node> charNodes, byte[] bytes) {
         this.charNodes = charNodes;
         this.bytes = bytes;
     }

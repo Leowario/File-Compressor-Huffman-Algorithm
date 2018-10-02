@@ -1,18 +1,20 @@
 package com.alevel.homework.haffman.algorithm;
 
 
+import com.alevel.homework.haffman.exceptions.NoSuchElementOfCodeException;
+import com.alevel.homework.haffman.exceptions.UnexpectedFileFormat;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.alevel.homework.haffman.exceptions.UnexpectedFileFormat;
-import com.alevel.homework.haffman.exceptions.NoSuchElementOfCodeException;
-
+/**
+ * @author Vitalii Usatyi
+ */
 class Decompressor {
 
     private Decompressor() {
@@ -23,34 +25,41 @@ class Decompressor {
         return new Decompressor();
     }
 
-    private static Map<String, Character> codeSymbol = new HashMap<>();
-
     void decompress(String directory) throws IOException, UnexpectedFileFormat, NoSuchElementOfCodeException {
-        if (!directory.substring(directory.length() - 11, directory.length()).contains(".compressed")) {
-            throw new UnexpectedFileFormat("Unexpected file Format");
+        if (!isValidFile(directory)) {
+            throw new UnexpectedFileFormat();
         }
+        //TODO is necessary to check for *.meta and *.compressed file ?
         String originalDirectory = directory.substring(0, directory.length() - 11);
-        codeSymbol = Meta.readMeta(originalDirectory);
-        FileOutputStream decomressedFile = new FileOutputStream(originalDirectory);
+        Map<String, Character> codeSymbolMap = Meta.readMeta(originalDirectory);
+        FileOutputStream fos = new FileOutputStream(originalDirectory);
         Path path = Paths.get(directory);//read table
         List<String> strings = Files.readAllLines(path);
-        String currentCode = "";
-        String s = strings.get(0);
+        String haffmanCode = strings.get(0);
+        createDecompressedFile(codeSymbolMap, fos, haffmanCode);
+    }
+
+    private void createDecompressedFile(Map<String, Character> codeSymbolMap, FileOutputStream fos, String haffmanCode) throws IOException, NoSuchElementOfCodeException {
         boolean isWrote = false;
-        for (int i = 0; i < s.length(); i++) {
-            if ((s.charAt(i) + "").equals("1")) {
+        String currentCode = "";
+        for (int i = 0; i < haffmanCode.length(); i++) {
+            if ("1".equals(haffmanCode.charAt(i) + "")) {
                 currentCode += "1";
-            } else if ((s.charAt(i) + "").equals("0")) {
+            } else if ("0".equals(haffmanCode.charAt(i) + "")) {
                 currentCode += "0";
             }
-            if (codeSymbol.containsKey(currentCode)) {
+            if (codeSymbolMap.containsKey(currentCode)) {
                 isWrote = true;
-                decomressedFile.write(codeSymbol.get(currentCode));
+                fos.write(codeSymbolMap.get(currentCode));
                 currentCode = "";
             }
         }
         if (!isWrote) {
             throw new NoSuchElementOfCodeException();
         }
+    }
+
+    private boolean isValidFile(String directory) {
+        return directory.substring(directory.length() - 11, directory.length()).contains(".compressed");
     }
 }

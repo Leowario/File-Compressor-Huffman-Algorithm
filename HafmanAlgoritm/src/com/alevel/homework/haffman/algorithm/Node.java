@@ -1,7 +1,9 @@
 package com.alevel.homework.haffman.algorithm;
 
+/**
+ * @author Vitalii Usatyi
+ */
 public class Node implements Comparable<Node> {
-
     int sum;
     String code;
 
@@ -38,7 +40,6 @@ public class Node implements Comparable<Node> {
     }
 
     static class LeafNode extends Node {
-
         char symbol;
 
         @Override
