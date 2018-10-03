@@ -45,7 +45,6 @@ public class Node implements Comparable<Node> {
         @Override
         void buildCode(String code) {
             super.buildCode(code);
-            // System.out.println(symbol + ": " + code);
         }
 
         LeafNode(char symbol, int count) {

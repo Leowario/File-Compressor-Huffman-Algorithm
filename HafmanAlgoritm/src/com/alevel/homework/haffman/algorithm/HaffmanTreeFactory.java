@@ -38,14 +38,6 @@ class HaffmanTreeFactory {
         return new HaffmanTree(charNodeMap, bytesOfFile);
     }
 
-    private void buildInternalNodes() {
-        while (priorityQueue.size() > 1) {
-            Node first = priorityQueue.poll();
-            Node second = priorityQueue.poll();
-            priorityQueue.add(new Node.InternalNode(first, second));
-        }
-    }
-
     private void readBytesFromFile(String directory) {
         try (FileInputStream fileInputStream = new FileInputStream(directory)) {
             bytesOfFile = new byte[fileInputStream.available()];
@@ -53,6 +45,14 @@ class HaffmanTreeFactory {
         } catch (IOException e) {
             e.printStackTrace();
             throw new IllegalStateException();
+        }
+    }
+
+    private void buildInternalNodes() {
+        while (priorityQueue.size() > 1) {
+            Node first = priorityQueue.poll();
+            Node second = priorityQueue.poll();
+            priorityQueue.add(new Node.InternalNode(first, second));
         }
     }
 
