@@ -7,30 +7,30 @@ import java.util.Map;
  * @author Vitalii Usatyi
  */
 class HaffmanTree {
-    private Map<Character, Node> charNodes;
-    private byte[] bytes;
+    private Map<Character, Node> charNodeMap;
+    private byte[] bytesOfFile;
 
-    HaffmanTree( Map<Character, Node> charNodes, byte[] bytes) {
-        this.charNodes = charNodes;
-        this.bytes = bytes;
+    HaffmanTree(Map<Character, Node> charNodeMap, byte[] bytesOfFile) {
+        this.charNodeMap = charNodeMap;
+        this.bytesOfFile = bytesOfFile;
     }
 
     String buildEncode() {
         String encode = "";
-        for (int i = 0; i < bytes.length; i++) {
-            char c = (char) bytes[i];
-            if (charNodes.containsKey(c)) {
-                encode += charNodes.get(c).code;
+        for (int i = 0; i < bytesOfFile.length; i++) {
+            char currentSymbol = (char) bytesOfFile[i];
+            if (charNodeMap.containsKey(currentSymbol)) {
+                encode += charNodeMap.get(currentSymbol).code;
             }
         }
         return encode;
     }
 
-    Map<String, Character> buildDeCodeMap() {
-        Map<String, Character> deCodeMap = new HashMap<>();
-        for (Map.Entry<Character, Node> map : charNodes.entrySet()) {
-            deCodeMap.put(map.getValue().code, map.getKey());
+    Map<String, Character> buildDecodeMap() {
+        Map<String, Character> decodeMap = new HashMap<>();
+        for (Map.Entry<Character, Node> map : charNodeMap.entrySet()) {
+            decodeMap.put(map.getValue().code, map.getKey());
         }
-        return deCodeMap;
+        return decodeMap;
     }
 }

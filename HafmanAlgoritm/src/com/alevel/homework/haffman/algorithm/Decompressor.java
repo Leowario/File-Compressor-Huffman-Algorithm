@@ -22,7 +22,12 @@ class Decompressor {
     }
 
     static Decompressor instance() {
-        return new Decompressor();
+        return singleton.VALUE.value;
+    }
+
+    enum singleton{
+        VALUE;
+        Decompressor value = new Decompressor();
     }
 
     void decompress(String directory) throws IOException, UnexpectedFileFormat, NoSuchElementOfCodeException {
@@ -31,15 +36,15 @@ class Decompressor {
         }
         //TODO is necessary to check for *.meta and *.compressed file ?
         String originalDirectory = directory.substring(0, directory.length() - 11);
-        Map<String, Character> codeSymbolMap = Meta.readMeta(originalDirectory);
+        Map<String, Character> decodeMap = Meta.readMeta(originalDirectory);
         FileOutputStream fos = new FileOutputStream(originalDirectory);
-        Path path = Paths.get(directory);//read table
+        Path path = Paths.get(directory);
         List<String> strings = Files.readAllLines(path);
         String haffmanCode = strings.get(0);
-        createDecompressedFile(codeSymbolMap, fos, haffmanCode);
+        decodeFile(decodeMap, fos, haffmanCode);
     }
 
-    private void createDecompressedFile(Map<String, Character> codeSymbolMap, FileOutputStream fos, String haffmanCode) throws IOException, NoSuchElementOfCodeException {
+    private void decodeFile(Map<String, Character> codeSymbolMap, FileOutputStream fos, String haffmanCode) throws IOException, NoSuchElementOfCodeException {
         boolean isWrote = false;
         String currentCode = "";
         for (int i = 0; i < haffmanCode.length(); i++) {

@@ -10,11 +10,10 @@ import java.util.PriorityQueue;
  * @author Vitalii Usatyi
  */
 class HaffmanTreeFactory {
-    private static String encode = "";
-    private Map<Character, Node> charNodes = new HashMap<>();
+    private Map<Character, Node> charNodeMap = new HashMap<>();
     private PriorityQueue<Node> priorityQueue = new PriorityQueue<>();
-    private Map<Character, Integer> symbolAndCount = new HashMap<>();
-    private byte[] bytes;
+    private Map<Character, Integer> sequenceOfSymbolsMap = new HashMap<>();
+    private byte[] bytesOfFile;
 
     private HaffmanTreeFactory() {
 
@@ -24,19 +23,19 @@ class HaffmanTreeFactory {
         return singleton.VALUE.value;
     }
 
-    public enum singleton {
+     enum singleton {
         VALUE;
         private HaffmanTreeFactory value = new HaffmanTreeFactory();
     }
 
     HaffmanTree create(String directory) {
         readBytesFromFile(directory);
-        initializeSequenceOfCharacters(bytes, symbolAndCount);
+        initializeSequenceOfSymbols(bytesOfFile, sequenceOfSymbolsMap);
         buildLeafNodes();
         buildInternalNodes();
         Node root = priorityQueue.poll();
         root.buildCode("");
-        return new HaffmanTree(charNodes, bytes);
+        return new HaffmanTree(charNodeMap, bytesOfFile);
     }
 
     private void buildInternalNodes() {
@@ -49,8 +48,8 @@ class HaffmanTreeFactory {
 
     private void readBytesFromFile(String directory) {
         try (FileInputStream fileInputStream = new FileInputStream(directory)) {
-            bytes = new byte[fileInputStream.available()];
-            fileInputStream.read(bytes);
+            bytesOfFile = new byte[fileInputStream.available()];
+            fileInputStream.read(bytesOfFile);
         } catch (IOException e) {
             e.printStackTrace();
             throw new IllegalStateException();
@@ -58,14 +57,14 @@ class HaffmanTreeFactory {
     }
 
     private void buildLeafNodes() {
-        for (Map.Entry<Character, Integer> entry : symbolAndCount.entrySet()) {
+        for (Map.Entry<Character, Integer> entry : sequenceOfSymbolsMap.entrySet()) {
             Node.LeafNode leafNode = new Node.LeafNode(entry.getKey(), entry.getValue());
-            charNodes.put(entry.getKey(), leafNode);
+            charNodeMap.put(entry.getKey(), leafNode);
             priorityQueue.add(leafNode);
         }
     }
 
-    private void initializeSequenceOfCharacters(byte[] bytes, Map<Character, Integer> symbolAndCount) {
+    private void initializeSequenceOfSymbols(byte[] bytes, Map<Character, Integer> symbolAndCount) {
         for (int i = 0; i < bytes.length; i++) {
             char c = (char) bytes[i];
             if (symbolAndCount.containsKey(c)) {

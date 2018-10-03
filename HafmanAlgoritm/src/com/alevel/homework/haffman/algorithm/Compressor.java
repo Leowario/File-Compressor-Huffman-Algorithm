@@ -3,6 +3,7 @@ package com.alevel.homework.haffman.algorithm;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Map;
+
 /**
  * @author Vitalii Usatyi
  */
@@ -12,14 +13,19 @@ class Compressor {
     }
 
     static Compressor instance() {
-        return new Compressor();
+        return singleton.VALUE.value;
+    }
+
+    enum singleton {
+        VALUE;
+        Compressor value = new Compressor();
     }
 
     void compress(String directory) throws IOException {
         HaffmanTree haffmanTree = HaffmanTreeFactory.instance().create(directory);
         String encode = haffmanTree.buildEncode();
-        Map<String, Character> deCodeMap = haffmanTree.buildDeCodeMap();
-        Meta.writeMeta(directory, deCodeMap);
+        Map<String, Character> decodeMap = haffmanTree.buildDecodeMap();
+        Meta.writeMeta(directory, decodeMap);
         createCompressedFile(directory, encode);
     }
 
