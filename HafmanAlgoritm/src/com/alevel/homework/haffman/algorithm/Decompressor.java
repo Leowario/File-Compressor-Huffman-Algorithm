@@ -44,7 +44,7 @@ class Decompressor {
         decodeFile(decodeMap, fos, haffmanCode);
     }
 
-    private void decodeFile(Map<String, Character> codeSymbolMap, FileOutputStream fos, String haffmanCode) throws IOException, NoSuchElementOfCodeException {
+    private void decodeFile(Map<String, Character> decodeMap, FileOutputStream fos, String haffmanCode) throws IOException, NoSuchElementOfCodeException {
         boolean isWrote = false;
         String currentCode = "";
         for (int i = 0; i < haffmanCode.length(); i++) {
@@ -53,9 +53,9 @@ class Decompressor {
             } else if ("0".equals(haffmanCode.charAt(i) + "")) {
                 currentCode += "0";
             }
-            if (codeSymbolMap.containsKey(currentCode)) {
+            if (decodeMap.containsKey(currentCode)) {
                 isWrote = true;
-                fos.write(codeSymbolMap.get(currentCode));
+                fos.write(decodeMap.get(currentCode));
                 currentCode = "";
             }
         }
