@@ -20,26 +20,26 @@ class HaffmanTreeFactory {
     }
 
     static HaffmanTreeFactory instance() {
-        return singleton.VALUE.value;
+        return Singleton.VALUE.value;
     }
 
-     enum singleton {
+     enum Singleton {
         VALUE;
         private HaffmanTreeFactory value = new HaffmanTreeFactory();
     }
 
-    HaffmanTree create(String directory) {
-        readBytesFromFile(directory);
+    HaffmanTree create(String source) {
+        readBytesFromFile(source);
         initializeSequenceOfSymbols(bytesOfFile, sequenceOfSymbolsMap);
         buildLeafNodes();
-        buildInternalNodes();
+        buildBindingNodes();
         Node root = priorityQueue.poll();
         root.buildCode("");
         return new HaffmanTree(charNodeMap, bytesOfFile);
     }
 
-    private void readBytesFromFile(String directory) {
-        try (FileInputStream fileInputStream = new FileInputStream(directory)) {
+    private void readBytesFromFile(String source) {
+        try (FileInputStream fileInputStream = new FileInputStream(source)) {
             bytesOfFile = new byte[fileInputStream.available()];
             fileInputStream.read(bytesOfFile);
         } catch (IOException e) {
@@ -48,17 +48,17 @@ class HaffmanTreeFactory {
         }
     }
 
-    private void buildInternalNodes() {
+    private void buildBindingNodes() {
         while (priorityQueue.size() > 1) {
             Node first = priorityQueue.poll();
             Node second = priorityQueue.poll();
-            priorityQueue.add(new Node.InternalNode(first, second));
+            priorityQueue.add(new BindingNode(first, second));
         }
     }
 
     private void buildLeafNodes() {
         for (Map.Entry<Character, Integer> entry : sequenceOfSymbolsMap.entrySet()) {
-            Node.LeafNode leafNode = new Node.LeafNode(entry.getKey(), entry.getValue());
+            LeafNode leafNode = new LeafNode(entry.getKey(), entry.getValue());
             charNodeMap.put(entry.getKey(), leafNode);
             priorityQueue.add(leafNode);
         }

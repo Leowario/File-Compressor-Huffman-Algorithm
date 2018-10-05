@@ -1,9 +1,6 @@
 package com.alevel.homework.haffman.algorithm;
 
 
-import com.alevel.homework.haffman.exceptions.NoSuchElementOfCodeException;
-import com.alevel.homework.haffman.exceptions.UnexpectedFileFormat;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -22,17 +19,17 @@ class Decompressor {
     }
 
     static Decompressor instance() {
-        return singleton.VALUE.value;
+        return Singleton.VALUE.value;
     }
 
-    enum singleton{
+    enum Singleton {
         VALUE;
         Decompressor value = new Decompressor();
     }
 
-    void decompress(String directory) throws IOException, UnexpectedFileFormat, NoSuchElementOfCodeException {
+    void decompress(String directory) throws IOException, UnexpectedFileFormatException, NoSuchElementOfCodeException {
         if (!isValidFile(directory)) {
-            throw new UnexpectedFileFormat();
+            throw new UnexpectedFileFormatException();
         }
         //TODO is necessary to check for *.meta and *.compressed file ?
         String originalDirectory = directory.substring(0, directory.length() - 11);
@@ -60,11 +57,11 @@ class Decompressor {
             }
         }
         if (!isWrote) {
-            throw new NoSuchElementOfCodeException();
+            throw new NoSuchElementOfCodeException(currentCode);
         }
     }
 
-    private boolean isValidFile(String directory) {
-        return directory.substring(directory.length() - 11, directory.length()).contains(".compressed");
+    private boolean isValidFile(String source) {
+        return source.substring(source.length() - 11, source.length()).contains(".compressed");
     }
 }

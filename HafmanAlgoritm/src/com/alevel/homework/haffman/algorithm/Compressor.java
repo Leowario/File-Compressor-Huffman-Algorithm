@@ -13,24 +13,24 @@ class Compressor {
     }
 
     static Compressor instance() {
-        return singleton.VALUE.value;
+        return Singleton.VALUE.value;
     }
 
-    enum singleton {
+    enum Singleton {
         VALUE;
         Compressor value = new Compressor();
     }
 
-    void compress(String directory) throws IOException {
-        HaffmanTree haffmanTree = HaffmanTreeFactory.instance().create(directory);
+    void compress(String source) throws IOException {
+        HaffmanTree haffmanTree = HaffmanTreeFactory.instance().create(source);
         String encode = haffmanTree.buildEncode();
         Map<String, Character> decodeMap = haffmanTree.buildDecodeMap();
-        Meta.writeMeta(directory, decodeMap);
-        createCompressedFile(directory, encode);
+        Meta.writeMeta(source, decodeMap);
+        createCompressedFile(source, encode);
     }
 
-    private void createCompressedFile(String directory, String encode) throws IOException {
-        FileOutputStream fos = new FileOutputStream(directory + ".compressed");
+    private void createCompressedFile(String source, String encode) throws IOException {
+        FileOutputStream fos = new FileOutputStream(source + ".compressed");
         for (int i = 0; i < encode.length(); i += 8) {
             for (int j = 0; j < 8 && (i + j) < encode.length(); j++) {
                 String currentSting = encode.charAt(i + j) + "";
