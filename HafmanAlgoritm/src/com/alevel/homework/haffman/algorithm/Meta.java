@@ -35,8 +35,7 @@ class Meta {
         Map<String, Character> decodeMap = new HashMap<>();
         Path path = Paths.get(source + ".meta");
         List<String> strings = Files.readAllLines(path);
-        for (int i = 0; i < strings.size(); i++) {
-            String currentRow = strings.get(i);
+        for (String currentRow : strings) {
             decodeMap.put(getCode(currentRow), getSymbol(currentRow));
         }
         return decodeMap;

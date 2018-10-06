@@ -16,21 +16,20 @@ class HaffmanTree {
     }
 
     String buildEncode() {
-        String encode = "";
-        for (int i = 0; i < bytesOfFile.length; i++) {
-            char currentSymbol = (char) bytesOfFile[i];
-            if (charNodeMap.containsKey(currentSymbol)) {
-                encode += charNodeMap.get(currentSymbol).code;
+        StringBuilder encoded = new StringBuilder();
+        for (byte aByteOfFile : bytesOfFile) {
+            char currentChar = (char) aByteOfFile;
+            if (charNodeMap.containsKey(currentChar)) {
+                Node node = charNodeMap.get(currentChar);
+                encoded.append(node.code);
             }
         }
-        return encode;
+        return encoded.toString();
     }
 
     Map<String, Character> buildDecodeMap() {
         Map<String, Character> decodeMap = new HashMap<>();
-        for (Map.Entry<Character, Node> map : charNodeMap.entrySet()) {
-            decodeMap.put(map.getValue().code, map.getKey());
-        }
+        charNodeMap.forEach((character, node) -> decodeMap.put(node.code, character));
         return decodeMap;
     }
 }

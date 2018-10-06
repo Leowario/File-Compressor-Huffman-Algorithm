@@ -1,9 +1,13 @@
 package com.alevel.homework.haffman.algorithm;
 
 
-import java.io.*;
+import java.io.IOException;
+
 /**
  * @author Vitalii Usatyi
+ * <p>
+ * Receives the way to File and flag ("--compress" or "--decompress").
+ * This implementation implements the algorithm conceptually and don't physically compress the file.
  */
 public class Application {
     private static final String DECOMPRESS = "--decompress";

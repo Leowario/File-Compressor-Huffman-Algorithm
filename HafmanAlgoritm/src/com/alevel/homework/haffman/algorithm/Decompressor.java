@@ -27,22 +27,21 @@ class Decompressor {
         Decompressor value = new Decompressor();
     }
 
-    void decompress(String directory) throws IOException, UnexpectedFileFormatException, NoSuchElementOfCodeException {
-        if (!isValidFile(directory)) {
+    void decompress(String source) throws IOException, UnexpectedFileFormatException, NoSuchElementOfCodeException {
+        if (!isValidFile(source)) {
             throw new UnexpectedFileFormatException();
         }
-        //TODO is necessary to check for *.meta and *.compressed file ?
-        String originalDirectory = directory.substring(0, directory.length() - 11);
+        String originalDirectory = source.substring(0, source.length() - 11);
         Map<String, Character> decodeMap = Meta.readMeta(originalDirectory);
         FileOutputStream fos = new FileOutputStream(originalDirectory);
-        Path path = Paths.get(directory);
+        Path path = Paths.get(source);
         List<String> strings = Files.readAllLines(path);
         String haffmanCode = strings.get(0);
         decodeFile(decodeMap, fos, haffmanCode);
     }
 
     private void decodeFile(Map<String, Character> decodeMap, FileOutputStream fos, String haffmanCode) throws IOException, NoSuchElementOfCodeException {
-        boolean isWrote = false;
+        boolean isWritten = false;
         String currentCode = "";
         for (int i = 0; i < haffmanCode.length(); i++) {
             if ("1".equals(haffmanCode.charAt(i) + "")) {
@@ -51,17 +50,17 @@ class Decompressor {
                 currentCode += "0";
             }
             if (decodeMap.containsKey(currentCode)) {
-                isWrote = true;
+                isWritten = true;
                 fos.write(decodeMap.get(currentCode));
                 currentCode = "";
             }
         }
-        if (!isWrote) {
+        if (!isWritten) {
             throw new NoSuchElementOfCodeException(currentCode);
         }
     }
 
     private boolean isValidFile(String source) {
-        return source.substring(source.length() - 11, source.length()).contains(".compressed");
+        return source.endsWith(".compressed");
     }
 }

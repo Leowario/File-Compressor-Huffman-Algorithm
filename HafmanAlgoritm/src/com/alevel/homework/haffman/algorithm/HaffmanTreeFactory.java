@@ -12,25 +12,24 @@ import java.util.PriorityQueue;
 class HaffmanTreeFactory {
     private Map<Character, Node> charNodeMap = new HashMap<>();
     private PriorityQueue<Node> priorityQueue = new PriorityQueue<>();
-    private Map<Character, Integer> sequenceOfSymbolsMap = new HashMap<>();
+    private Map<Character, Integer> charSequenceMap = new HashMap<>();
     private byte[] bytesOfFile;
 
     private HaffmanTreeFactory() {
-
     }
 
     static HaffmanTreeFactory instance() {
         return Singleton.VALUE.value;
     }
 
-     enum Singleton {
+    enum Singleton {
         VALUE;
         private HaffmanTreeFactory value = new HaffmanTreeFactory();
     }
 
     HaffmanTree create(String source) {
         readBytesFromFile(source);
-        initializeSequenceOfSymbols(bytesOfFile, sequenceOfSymbolsMap);
+        initializeSequenceOfSymbols(bytesOfFile, charSequenceMap);
         buildLeafNodes();
         buildBindingNodes();
         Node root = priorityQueue.poll();
@@ -49,28 +48,39 @@ class HaffmanTreeFactory {
     }
 
     private void buildBindingNodes() {
-        while (priorityQueue.size() > 1) {
-            Node first = priorityQueue.poll();
-            Node second = priorityQueue.poll();
-            priorityQueue.add(new BindingNode(first, second));
+        try {
+            while (priorityQueue.size() > 1) {
+                Node first = priorityQueue.poll();
+                Node second = priorityQueue.poll();
+                priorityQueue.add(new BindingNode(checkNotNull(first), checkNotNull(second)));
+            }
+        } catch (BuildHaffmanTreeException e) {
+            e.printStackTrace();
         }
+    }
+
+    private Node checkNotNull(Node node) throws BuildHaffmanTreeException {
+        if (node == null) {
+            throw new BuildHaffmanTreeException();
+        }
+        return node;
     }
 
     private void buildLeafNodes() {
-        for (Map.Entry<Character, Integer> entry : sequenceOfSymbolsMap.entrySet()) {
-            LeafNode leafNode = new LeafNode(entry.getKey(), entry.getValue());
-            charNodeMap.put(entry.getKey(), leafNode);
+        charSequenceMap.forEach((character, sequence) -> {
+            LeafNode leafNode = new LeafNode(character, sequence);
+            charNodeMap.put(character, leafNode);
             priorityQueue.add(leafNode);
-        }
+        });
     }
 
-    private void initializeSequenceOfSymbols(byte[] bytes, Map<Character, Integer> symbolAndCount) {
-        for (int i = 0; i < bytes.length; i++) {
-            char c = (char) bytes[i];
-            if (symbolAndCount.containsKey(c)) {
-                symbolAndCount.put(c, symbolAndCount.get(c) + 1);
+    private void initializeSequenceOfSymbols(byte[] bytes, Map<Character, Integer> charSequenceMap) {
+        for (byte aByte : bytes) {
+            char currentChar = (char) aByte;
+            if (charSequenceMap.containsKey(currentChar)) {
+                charSequenceMap.put(currentChar, charSequenceMap.get(currentChar) + 1);
             } else {
-                symbolAndCount.put(c, 1);
+                charSequenceMap.put(currentChar, 1);
             }
         }
     }

@@ -20,6 +20,3 @@ public abstract class Node implements Comparable<Node> {
         return (Integer.compare(sum, o.sum));
     }
 }
-
-
-
