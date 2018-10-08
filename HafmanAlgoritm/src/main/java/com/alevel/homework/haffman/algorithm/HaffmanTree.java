@@ -7,8 +7,8 @@ import java.util.Map;
  * @author Vitalii Usatyi
  */
 class HaffmanTree {
-    private Map<Character, Node> charNodeMap;
-    private byte[] bytesOfFile;
+    private final Map<Character, Node> charNodeMap;
+    private final byte[] bytesOfFile;
 
     HaffmanTree(Map<Character, Node> charNodeMap, byte[] bytesOfFile) {
         this.charNodeMap = charNodeMap;

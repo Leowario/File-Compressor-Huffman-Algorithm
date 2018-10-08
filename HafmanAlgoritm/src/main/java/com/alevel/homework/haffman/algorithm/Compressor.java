@@ -16,11 +16,6 @@ class Compressor {
         return Singleton.VALUE.value;
     }
 
-    enum Singleton {
-        VALUE;
-        Compressor value = new Compressor();
-    }
-
     void compress(String source) throws IOException {
         HaffmanTree haffmanTree = HaffmanTreeFactory.instance().create(source);
         String encoded = haffmanTree.buildEncode();
@@ -41,5 +36,10 @@ class Compressor {
                 }
             }
         }
+    }
+
+    enum Singleton {
+        VALUE;
+        Compressor value = new Compressor();
     }
 }

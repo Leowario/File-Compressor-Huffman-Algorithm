@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 /**
  * @author Vitalii Usatyi
  */
@@ -48,22 +50,11 @@ class HaffmanTreeFactory {
     }
 
     private void buildBindingNodes() {
-        try {
-            while (priorityQueue.size() > 1) {
-                Node first = priorityQueue.poll();
-                Node second = priorityQueue.poll();
-                priorityQueue.add(new BindingNode(checkNotNull(first), checkNotNull(second)));
-            }
-        } catch (BuildHaffmanTreeException e) {
-            e.printStackTrace();
+        while (priorityQueue.size() > 1) {
+            Node first = priorityQueue.poll();
+            Node second = priorityQueue.poll();
+            priorityQueue.add(new BindingNode(checkNotNull(first), checkNotNull(second)));
         }
-    }
-
-    private Node checkNotNull(Node node) throws BuildHaffmanTreeException {
-        if (node == null) {
-            throw new BuildHaffmanTreeException();
-        }
-        return node;
     }
 
     private void buildLeafNodes() {

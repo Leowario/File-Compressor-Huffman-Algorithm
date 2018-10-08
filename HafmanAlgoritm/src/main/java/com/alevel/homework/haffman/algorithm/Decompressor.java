@@ -22,11 +22,6 @@ class Decompressor {
         return Singleton.VALUE.value;
     }
 
-    enum Singleton {
-        VALUE;
-        Decompressor value = new Decompressor();
-    }
-
     void decompress(String source) throws IOException, UnexpectedFileFormatException, NoSuchElementOfCodeException {
         if (!isValidFile(source)) {
             throw new UnexpectedFileFormatException();
@@ -62,5 +57,10 @@ class Decompressor {
 
     private boolean isValidFile(String source) {
         return source.endsWith(".compressed");
+    }
+
+    enum Singleton {
+        VALUE;
+        Decompressor value = new Decompressor();
     }
 }

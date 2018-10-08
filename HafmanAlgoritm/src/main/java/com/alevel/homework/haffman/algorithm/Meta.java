@@ -14,6 +14,7 @@ import java.util.Map;
  */
 class Meta {
     private Meta() {
+
     }
 
     /**
