@@ -1,4 +1,4 @@
-package com.alevel.homework.haffman.algorithm;
+package com.alevel.homework.huffman.algorithm;
 
 class LeafNode extends Node {
     char symbol;

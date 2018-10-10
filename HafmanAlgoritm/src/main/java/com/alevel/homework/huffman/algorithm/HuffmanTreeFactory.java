@@ -1,4 +1,4 @@
-package com.alevel.homework.haffman.algorithm;
+package com.alevel.homework.huffman.algorithm;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -11,32 +11,32 @@ import static com.google.common.base.Preconditions.checkNotNull;
 /**
  * @author Vitalii Usatyi
  */
-class HaffmanTreeFactory {
+class HuffmanTreeFactory {
     private Map<Character, Node> charNodeMap = new HashMap<>();
     private PriorityQueue<Node> priorityQueue = new PriorityQueue<>();
     private Map<Character, Integer> charSequenceMap = new HashMap<>();
     private byte[] bytesOfFile;
 
-    private HaffmanTreeFactory() {
+    private HuffmanTreeFactory() {
     }
 
-    static HaffmanTreeFactory instance() {
+    static HuffmanTreeFactory instance() {
         return Singleton.VALUE.value;
     }
 
     enum Singleton {
         VALUE;
-        private HaffmanTreeFactory value = new HaffmanTreeFactory();
+        private HuffmanTreeFactory value = new HuffmanTreeFactory();
     }
 
-    HaffmanTree create(String source) {
+    HuffmanTree create(String source) {
         readBytesFromFile(source);
         initializeSequenceOfSymbols(bytesOfFile, charSequenceMap);
         buildLeafNodes();
         buildBindingNodes();
         Node root = priorityQueue.poll();
         root.buildCode("");
-        return new HaffmanTree(charNodeMap, bytesOfFile);
+        return new HuffmanTree(charNodeMap, bytesOfFile);
     }
 
     private void readBytesFromFile(String source) {

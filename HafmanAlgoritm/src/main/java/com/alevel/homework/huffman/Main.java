@@ -1,6 +1,6 @@
-package com.alevel.homework.haffman;
+package com.alevel.homework.huffman;
 
-import com.alevel.homework.haffman.algorithm.Application;
+import com.alevel.homework.huffman.algorithm.Application;
 
 /**
  * @author Vitalii Usatyi

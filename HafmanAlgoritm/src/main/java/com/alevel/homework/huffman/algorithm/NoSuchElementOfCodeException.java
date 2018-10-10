@@ -1,4 +1,4 @@
-package com.alevel.homework.haffman.algorithm;
+package com.alevel.homework.huffman.algorithm;
 
 /**
  * @author Vitalii Usatyi

@@ -1,4 +1,4 @@
-package com.alevel.homework.haffman.algorithm;
+package com.alevel.homework.huffman.algorithm;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,11 +6,11 @@ import java.util.Map;
 /**
  * @author Vitalii Usatyi
  */
-class HaffmanTree {
+class HuffmanTree {
     private final Map<Character, Node> charNodeMap;
     private final byte[] bytesOfFile;
 
-    HaffmanTree(Map<Character, Node> charNodeMap, byte[] bytesOfFile) {
+    HuffmanTree(Map<Character, Node> charNodeMap, byte[] bytesOfFile) {
         this.charNodeMap = charNodeMap;
         this.bytesOfFile = bytesOfFile;
     }

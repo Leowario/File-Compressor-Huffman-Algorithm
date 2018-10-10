@@ -1,36 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3802b943-03ca-4364-86ca-5023c9c5899f" name="Default" comment="Added maven support, code corrected">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/BindingNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Compressor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Decompressor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/HaffmanTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/HaffmanTreeFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/LeafNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Meta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/NoSuchElementOfCodeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/UnexpectedFileFormatException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="3802b943-03ca-4364-86ca-5023c9c5899f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HafmanAlgoritm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HafmanAlgoritm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/alevel/homework/haffman/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/alevel/homework/haffman/algorithm/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/alevel/homework/haffman/algorithm/BindingNode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/alevel/homework/haffman/algorithm/BuildHaffmanTreeException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/alevel/homework/haffman/algorithm/Compressor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/alevel/homework/haffman/algorithm/Decompressor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/alevel/homework/haffman/algorithm/HaffmanTree.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/alevel/homework/haffman/algorithm/HaffmanTreeFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/alevel/homework/haffman/algorithm/LeafNode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/alevel/homework/haffman/algorithm/Meta.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/alevel/homework/haffman/algorithm/NoSuchElementOfCodeException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/alevel/homework/haffman/algorithm/Node.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/alevel/homework/haffman/algorithm/UnexpectedFileFormatException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HafmanAlgoritm.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/BindingNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/BindingNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Compressor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/Compressor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Decompressor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/Decompressor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/HaffmanTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/HuffmanTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/HaffmanTreeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/HuffmanTreeFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/LeafNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/LeafNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Meta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/Meta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/NoSuchElementOfCodeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/NoSuchElementOfCodeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/UnexpectedFileFormatException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/UnexpectedFileFormatException.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,17 +35,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Node.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="NoSuchElementOfCodeException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/NoSuchElementOfCodeException.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/NoSuchElementOfCodeException.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
               <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
@@ -68,7 +45,7 @@
         </entry>
       </file>
       <file leaf-file-name="UnexpectedFileFormatException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/UnexpectedFileFormatException.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/UnexpectedFileFormatException.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
               <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
@@ -76,8 +53,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/Main.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
               <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
@@ -89,56 +66,65 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Meta.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Meta.java">
+      <file leaf-file-name="BindingNode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/BindingNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="374">
+              <caret line="22" column="1" selection-start-line="22" selection-end-line="22" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Meta.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/Meta.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
               <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Decompressor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Decompressor.java">
+      <file leaf-file-name="HuffmanTree.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/HuffmanTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
+            <state relative-caret-position="119">
+              <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Decompressor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/Decompressor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HuffmanTreeFactory.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/HuffmanTreeFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Compressor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Compressor.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/Compressor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="493">
               <caret line="33" column="16" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HaffmanTree.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/HaffmanTree.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="12" column="57" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HaffmanTreeFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/HaffmanTreeFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="905">
-              <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LeafNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/LeafNode.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/LeafNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            <state relative-caret-position="221">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -220,10 +206,14 @@
         <option value="$PROJECT_DIR$/src/com/alevel/homework/haffman/algorithm/Node.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/BuildHaffmanTreeException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/HaffmanTreeFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Meta.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/BindingNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/UnexpectedFileFormatException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/HaffmanTree.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/HuffmanTree.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/HaffmanTreeFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/HuffmanTreeFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/HuffmanTreeFactory.java" />
       </list>
     </option>
   </component>
@@ -244,9 +234,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
+    <option name="width" value="768" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -327,6 +316,28 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="HafmanAlgoritm" type="1abcf292:AndroidViewProjectNode" />
+              <item name="HafmanAlgoritm" type="e9137016:NonAndroidModuleNode" />
+            </path>
+            <path>
+              <item name="HafmanAlgoritm" type="1abcf292:AndroidViewProjectNode" />
+              <item name="HafmanAlgoritm" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="HafmanAlgoritm" type="1abcf292:AndroidViewProjectNode" />
+              <item name="HafmanAlgoritm" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+              <item name="haffman" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -358,7 +369,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="haffman" type="462c0819:PsiDirectoryNode" />
+              <item name="huffman" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HafmanAlgoritm" type="b2602c69:ProjectViewProjectNode" />
@@ -366,7 +377,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="haffman" type="462c0819:PsiDirectoryNode" />
+              <item name="huffman" type="462c0819:PsiDirectoryNode" />
               <item name="algorithm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -379,30 +390,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="HafmanAlgoritm" type="1abcf292:AndroidViewProjectNode" />
-              <item name="HafmanAlgoritm" type="e9137016:NonAndroidModuleNode" />
-            </path>
-            <path>
-              <item name="HafmanAlgoritm" type="1abcf292:AndroidViewProjectNode" />
-              <item name="HafmanAlgoritm" type="e9137016:NonAndroidModuleNode" />
-              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="HafmanAlgoritm" type="1abcf292:AndroidViewProjectNode" />
-              <item name="HafmanAlgoritm" type="e9137016:NonAndroidModuleNode" />
-              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
-              <item name="haffman" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -447,14 +436,14 @@
       <option name="WIDTH" value="0" />
     </configuration>
     <configuration name="Compress" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.alevel.homework.haffman.Main" />
-      <module name="HafmanAlgoritm" />
+      <option name="MAIN_CLASS_NAME" value="com.alevel.homework.huffman.Main" />
+      <module name="HufmanAlgoritm" />
       <option name="PROGRAM_PARAMETERS" value="E:/Java/Test/TestFile.txt --compress" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     </configuration>
     <configuration name="Decompress" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.alevel.homework.haffman.Main" />
-      <module name="HafmanAlgoritm" />
+      <option name="MAIN_CLASS_NAME" value="com.alevel.homework.huffman.Main" />
+      <module name="HufmanAlgoritm" />
       <option name="PROGRAM_PARAMETERS" value="E:/Java/Test/TestFile.txt.compressed --decompress" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     </configuration>
@@ -598,7 +587,8 @@
       <option name="presentableId" value="Default" />
       <updated>1527495997554</updated>
       <workItem from="1538673542078" duration="6643000" />
-      <workItem from="1539018469686" duration="2958000" />
+      <workItem from="1539018469686" duration="4590000" />
+      <workItem from="1539158365540" duration="1459000" />
     </task>
     <task id="LOCAL-00001" summary="Beginning develop">
       <created>1527618445575</created>
@@ -712,11 +702,18 @@
       <option name="project" value="LOCAL" />
       <updated>1538496693679</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added maven support, code corrected">
+      <created>1539022379500</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1539022379500</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9601000" />
+    <option name="totallyTimeSpent" value="12692000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -733,30 +730,30 @@
       <window_info anchor="right" id="Key Promoter X" order="3" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32933104" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32761577" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32761577" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32761577" />
-      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32761577" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3291714" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32761577" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26096824" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2647504" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32761577" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39954597" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39954597" />
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32761577" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32761577" />
       <window_info id="Nl-Palette" order="2" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Properties" order="3" />
@@ -860,41 +857,35 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Compressor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/Compressor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Decompressor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/Decompressor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/UnexpectedFileFormatException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/UnexpectedFileFormatException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Application.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
@@ -902,24 +893,21 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HafmanTest/HafmanTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Decompressor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/Decompressor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Application.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2125">
           <caret line="125" column="32" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
@@ -931,14 +919,14 @@
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/com/sun/org/apache/xpath/internal/operations/String.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/java/util/Map.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/java/lang/Integer.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Application.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2873">
           <caret line="177" lean-forward="true" selection-start-line="177" selection-end-line="177" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
@@ -981,91 +969,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/BuildHaffmanTreeException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Application.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/BuildHaffmanTreeException.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/BindingNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Compressor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="33" column="16" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Decompressor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/HaffmanTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="57" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/HaffmanTreeFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="905">
-          <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/LeafNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Meta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/Node.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/NoSuchElementOfCodeException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/NoSuchElementOfCodeException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/algorithm/UnexpectedFileFormatException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/UnexpectedFileFormatException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/haffman/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
@@ -1073,6 +1006,55 @@
             <element signature="e#194#195#0" expanded="true" />
             <element signature="e#242#243#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/Decompressor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/Compressor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/BindingNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="1" selection-start-line="22" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/LeafNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/Meta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/HuffmanTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alevel/homework/huffman/algorithm/HuffmanTreeFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1093,7 +1075,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1141,7 +1123,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>Maven: com.google.code.findbugs:jsr305:3.0.2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

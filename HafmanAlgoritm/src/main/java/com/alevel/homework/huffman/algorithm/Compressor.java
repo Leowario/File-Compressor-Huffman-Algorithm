@@ -1,4 +1,4 @@
-package com.alevel.homework.haffman.algorithm;
+package com.alevel.homework.huffman.algorithm;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -17,9 +17,9 @@ class Compressor {
     }
 
     void compress(String source) throws IOException {
-        HaffmanTree haffmanTree = HaffmanTreeFactory.instance().create(source);
-        String encoded = haffmanTree.buildEncode();
-        Map<String, Character> decodeMap = haffmanTree.buildDecodeMap();
+        HuffmanTree huffmanTree = HuffmanTreeFactory.instance().create(source);
+        String encoded = huffmanTree.buildEncode();
+        Map<String, Character> decodeMap = huffmanTree.buildDecodeMap();
         Meta.writeMeta(source, decodeMap);
         createCompressedFile(source, encoded);
     }
