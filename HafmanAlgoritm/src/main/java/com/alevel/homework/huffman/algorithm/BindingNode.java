@@ -3,6 +3,9 @@ package com.alevel.homework.huffman.algorithm;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+/**
+ * @author Vitalii Usatyi
+ */
 class BindingNode extends Node {
     final Node left;
     final Node right;

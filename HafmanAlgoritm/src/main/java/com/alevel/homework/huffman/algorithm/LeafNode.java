@@ -1,5 +1,8 @@
 package com.alevel.homework.huffman.algorithm;
 
+/**
+ * @author Vitalii Usatyi
+ */
 class LeafNode extends Node {
     char symbol;
 
